@@ -9,7 +9,7 @@ const Conn = require("./model/conn/index");
 Conn(); 
 
 app.use(cors());
-app.option("*", cors());
+app.options("*", cors());
 
 app.get('/', (req,res) => {
     res.status(200).json({message:"rota index ok"});
