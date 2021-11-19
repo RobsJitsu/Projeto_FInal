@@ -1,11 +1,15 @@
 const express = require("express");  
 const app = express();  
 require('dotenv').config(); 
+var cors = require("cors");
 app.use(express.json());  
 
 const Conn = require("./model/conn/index"); 
 
 Conn(); 
+
+app.use(cors());
+app.option("*", cors());
 
 app.get('/', (req,res) => {
     res.status(200).json({message:"rota index ok"});
