@@ -3,6 +3,7 @@ const app = express();
 require('dotenv').config(); 
 var cors = require("cors");
 app.use(express.json());  
+const port = 3000;
 
 const Conn = require("./model/conn/index"); 
 
@@ -15,21 +16,25 @@ app.get('/', (req,res) => {
     res.status(200).json({message:"rota index ok"});
 })
 
-const HeavyMetalRouter = require("./routers/HeavyMetal.routes");
-app.use('/HeavyMetal', HeavyMetalRouter);
+const CompanyRouter = require("./routers/Company.routes");
+app.use('/Company',CompanyRouter);
 
-const RockAndRollRouter = require("./routers/RockAndRoll.routes");
-app.use('/RockAndRoll',RockAndRollRouter);
+const CompaddressesRouter = require("./routers/Compaddresses.routes");
+app.use('/Compaddresses',CompaddressesRouter);
 
-const ThrashMetalRouter = require("./routers/ThrashMetal.routes");
-app.use('/ThrashMetal',ThrashMetalRouter);
+const AddressesRouter = require("./routers/Addresses.routes");
+app.use('/Compaddresses',CompaddressesRouter);
 
-const PunkRouter = require("./routers/Punk.routes");
-app.use('/Punk',PunkRouter); 
+const CompfieldsRouter = require("./routers/Compfields.routes");
+app.use('/Compfields',CompfieldsRouter); 
 
-const GrungeRouter = require("./routers/Grunge.routes");
-app.use('/Grunge',GrungeRouter);
+const FieldsRouter = require("./routers/Fields.routes");
+app.use('/Compfields',CompfieldsRouter); 
 
-app.listen(process.env.PORT, () => {
-    console.log(`Servidor rodando em: http://localhost:${process.env.PORT}`);
+const PrincipalRouter = require("./routers/Principal.routes");
+app.use('/Principal',PrincipalRouter);
+
+app.listen(port, () => {
+    console.info(`App rodando em: http://localhost:${port}`);
 });
+

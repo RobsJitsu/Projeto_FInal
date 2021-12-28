@@ -3,8 +3,8 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 async function Conn(){
-    await mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_BASE}`, {
-        useNewUrlParser: true,
+    await mongoose.connect( 
+    {   useNewUrlParser: true,
         useUnifiedTopology: true,
     }).then(() => {
         console.info('Database Online!');
