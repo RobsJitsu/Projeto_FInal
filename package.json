@@ -1,11 +1,10 @@
 {
-  "name": "Projeto_Final_Backend",
+  "name": "Atendare",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon",
+    "start":"node index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,18 +13,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "mongoose": "^6.0.13"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RobsJitsu/Projeto_Final.git"
-  },
-  "bugs": {
-    "url": "https://github.com/RobsJitsu/Projeto_Final/issues"
-  },
-  "homepage": "https://github.com/RobsJitsu/Projeto_Final#readme"
+    "express": "^4.17.2",
+    "mongoose": "^6.1.4"
+  }
 }
